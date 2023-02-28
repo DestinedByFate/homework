@@ -5,18 +5,17 @@
 // 782 -> 8
 // 918 -> 1
 
-int SecondNumber(int input)
+void SecondNumber(int input)
 {
-    if (input >= 100)
+    if (input >= 100 && input <1000)
     {
         int secNum = input / 10 % 10;
         Console.Write($"Second number of {input} is {secNum}.");
     }
     else Console.Write("No, no! Input a three-digit number!");
-    return input;
 }
 
 Console.Write("Input a three-digit number: ");
 int input = Convert.ToInt32(Console.ReadLine());
 
-Console.Write(SecondNumber(input));
+SecondNumber(input);
