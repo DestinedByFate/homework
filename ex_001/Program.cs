@@ -5,17 +5,36 @@
 // 782 -> 8
 // 918 -> 1
 
-void SecondNumber(int input)
+// void SecondNumber(int input)
+// {
+//     if (input >= 100 || input <= 1000)
+//     {
+//         int secNum = input / 10 % 10;
+//         Console.Write($"Second number of {input} is {secNum}.");
+//     }
+//     else Console.Write("No, no! Input a three-digit number!");
+// }
+
+// Console.Write("Input a three-digit number: ");
+// int input = Convert.ToInt32(Console.ReadLine());
+
+// SecondNumber(input);
+
+int Prompt(string message)
 {
-    if (input >= 100 && input <1000)
-    {
-        int secNum = input / 10 % 10;
-        Console.Write($"Second number of {input} is {secNum}.");
-    }
-    else Console.Write("No, no! Input a three-digit number!");
+    System.Console.Write(message);
+    string value = Console.ReadLine();
+    int result = Convert.ToInt32(value);
+    return result;
 }
 
-Console.Write("Input a three-digit number: ");
-int input = Convert.ToInt32(Console.ReadLine());
+int number = Prompt("Input a third number digit: ");
+if (number < 100 || number >= 1000)
+{
+    Console.WriteLine("RRRR");
+    return;
+} 
 
-SecondNumber(input);
+Console.WriteLine($"Input a number {number}");
+int SecondRank = number / 10 % 10;
+Console.WriteLine($"Second digit is: {SecondRank}");
