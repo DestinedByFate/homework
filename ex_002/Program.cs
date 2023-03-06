@@ -6,23 +6,49 @@
 // 32679 -> 6
 
 
-int ThirdDigit(string message)
+int Prompt(string message)
 {
-    System.Console.Write(message);
+    Console.Write(message);
     string value = Console.ReadLine();
     int result = Convert.ToInt32(value);
     return result;
 }
 
-int textnumber = ThirdDigit("Input a third digit number: ");
-if (textnumber < 100)
+int GetThirdRank(int number)
 {
-    Console.Write("Oops, third number is gone! ^_^ Repeat it.");
-    return;
+    while (number > 999)
+    {
+        number /= 10;
+    }
+    return number % 10;
 }
 
-int number = textnumber % 10;
-Console.WriteLine($"Third digit of {textnumber} is {number}");
+bool ValidateNumebr(int number)
+{
+    if (number < 100)
+    {
+        Console.WriteLine("Oops, third number is gone! ^_^ Repeat it.");
+        return false;
+    }
+    return true;
+}
+
+int number = Prompt("Enter a digit: ");
+if (ValidateNumebr(number))
+{
+    Console.WriteLine(GetThirdRank(number));
+}
+
+
+// int textnumber = ThirdDigit("Input a third digit number: ");
+// if (textnumber < 100)
+// {
+//     Console.Write("Oops, third number is gone! ^_^ Repeat it.");
+//     return;
+// }
+
+// int number = textnumber % 10;
+// Console.WriteLine($"Third digit of {textnumber} is {number}");
 
 
 // int Factorial(int n)
